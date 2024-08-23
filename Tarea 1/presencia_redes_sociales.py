@@ -4,7 +4,7 @@ import pandas as pd
 archivo = "Presencia Redes Sociales - Presencia Redes Sociales.csv"
 datos = pd.read_csv(archivo)
 
-# convertir todas las columnas de interés a números
+# convertir todas las columnas de ínteres a números
 columnas_meses = ["ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO"]
 for columna in columnas_meses:
     datos[columna] = pd.to_numeric(datos[columna], errors="coerce")
@@ -27,7 +27,7 @@ print(f"Promedio de 'Me gusta' en YouTube: {promedio_me_gusta_youtube}")
 print(f"Promedio de 'Me gusta' en Twitter: {promedio_me_gusta_twitter}")
 print(f"Promedio de 'Me gusta' en Facebook: {promedio_me_gusta_facebook}")
 
-# validar que es un mes
+# validar en que mes es
 def pedir_mes(mensaje):
     while True:
         mes = input(mensaje).upper()
@@ -36,7 +36,7 @@ def pedir_mes(mensaje):
         else:
             print("Por favor, ingrese un mes válido.")
 
-# permite calcular entre meses seleccionados por teclado 
+# Permite calcular entre meses seleccionados 
 mes_inicio = pedir_mes("Ingrese el mes de inicio (ENERO a JUNIO): ")
 mes_fin = pedir_mes("Ingrese el mes de fin (ENERO a JUNIO): ")
 diferencia_visualizaciones_youtube = datos.loc[datos["CONCEPTO"] == "VISUALIZACIONES", mes_fin].values[0] - datos.loc[datos["CONCEPTO"] == "VISUALIZACIONES", mes_inicio].values[0]
