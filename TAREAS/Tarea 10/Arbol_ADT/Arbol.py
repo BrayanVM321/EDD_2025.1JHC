@@ -52,7 +52,7 @@ class ArbolGeneral:
             for hijo in nodo.hijos:
                 self.imprimir_arbol(hijo, nivel + 1)
 
-# Crear el árbol binario e insertar los valores
+# Crear el árbol de numeros
 arbol = ArbolBinario()
 arbol.agregar(10)
 arbol.agregar(5)
@@ -60,12 +60,12 @@ arbol.agregar(15)
 arbol.agregar(1)
 arbol.agregar(25)
 
-# Imprimir en orden (in-order traversal)
+# Imprimir en orden
 print("Árbol Binario:")
 arbol.imprimir_en_orden(arbol.raiz)
 print()
 
-# Crear el árbol general
+# Crear el árbol de nombres
 raiz = NodoGeneral("Diego")
 arbol_general = ArbolGeneral(raiz)
 nodo_pedro = arbol_general.agregar_hijo(raiz, "Pedro")
@@ -73,6 +73,6 @@ nodo_mario = arbol_general.agregar_hijo(raiz, "Mario")
 arbol_general.agregar_hijo(nodo_pedro, "Susan")
 arbol_general.agregar_hijo(nodo_pedro, "Diana")
 
-# Imprimir el árbol general
+# Imprimir el árbol de nombres
 print("Árbol General:")
 arbol_general.imprimir_arbol(raiz)
